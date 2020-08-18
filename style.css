@@ -1,0 +1,131 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+
+.app{
+    height:100vh;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+}
+
+video{
+    position: fixed;
+    top:0%;
+    object-fit: cover;
+    left:0%;
+    z-index: -10;
+    height:100%;
+    width:100%;
+    
+}
+
+.time-select,
+.player-container,
+.sound-picker {
+    height:80%;
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    justify-items: center;
+}
+
+.player-container{
+    position: relative;
+}
+
+.player-container svg{
+    position: absolute;
+    height:50%;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) rotate(-90deg);
+    pointer-events: none;
+}
+
+.time-display{
+    position: absolute;
+    bottom:10%;
+    font-size:50px;
+    color:white
+}
+
+.time-btn,
+.sound-btn{
+    width:100px;
+    background:transparent;
+    cursor: pointer;
+    border:none;
+    outline: none;
+}
+
+.time-btn{
+   height: 50px;
+   border:2px solid white;
+   border-radius: 10px;
+}
+
+.time-btn:hover{
+    
+    background: white;
+  
+ }
+
+.sound-btn{
+    height: 100px;
+    border-radius: 50%;
+}
+
+.sound-btn img{
+    width:70%
+}
+
+.sound-btn:nth-child(1){
+    background:rgb(255, 255, 154)
+}
+
+.sound-btn:nth-child(2){
+    background: rgb(246, 60, 60)
+}
+
+.sound-btn:nth-child(3){
+    background:rgb(193, 237, 251);
+}
+
+@media only screen and (max-width: 600px){
+    .app{
+        flex-direction: column;
+    }
+
+    .time-select,
+    .player-container,
+    .sound-picker {
+        width:100%;
+       flex-direction: row;
+       justify-items: center;
+       align-items: center;
+       justify-content: space-evenly;
+    }
+    .sound-btn{
+        height:50px;
+        width:50px;
+    }
+    .time-btn{
+        width:80px;
+    }
+    .play{
+        height:50px;
+    }
+    .time-display{
+        bottom:0%;
+        font-size:40px;
+    }
+    video{
+        object-fit: cover;
+        /* height:100%; */
+    }
+}
